@@ -31,7 +31,7 @@
                            name="name"
                            title="Введите Ваше имя латиницей или кириллицей"
                            data-reg="^[а-яА-ЯёЁa-zA-Z].{2,20}$">
-                    <span>Введите Вашу фамилию латиницей или кириллицей</span>
+                    <span>Введите Ваше имя латиницей или кириллицей</span>
                 </label>
             </div>
 
@@ -78,7 +78,7 @@
                            type="password"
                            name="password_repeat"
                            title="Повторите введенный пароль"
-                           data-password-repeat>
+                           id="password_repeat">
                     <span>Повторите введенный пароль</span>
                 </label>
             </div>
@@ -96,7 +96,7 @@
             </div>
 
             <div class="flex-column">
-                <div class="status-sending flex-centered">
+                <div class="hint-container flex-centered">
                     <p id="failture">Правильно заполните все обязательные* поля</p>
                     <p id="submited">Ваша заявка отправлена</p>
                 </div> <button type="submit"> Отправить </button>

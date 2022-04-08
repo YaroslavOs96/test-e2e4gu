@@ -8,17 +8,9 @@ window.addEventListener('load', () => {
         const inputArr = form.querySelectorAll('input'),
             arrInputValidStatus = [];
         inputArr.forEach(function (item) {
-            if (item.classList.contains('value-valid')) {
-                arrInputValidStatus.push(true)
-            } else {
-                arrInputValidStatus.push(false)
-            }
+            item.classList.contains('value-valid') ? arrInputValidStatus.push(true) : arrInputValidStatus.push(false)
         });
-        if (arrInputValidStatus.every(item => item)) {
-            sendForm()
-        } else {
-            abortSendForm()
-        }
+        arrInputValidStatus.every(item => item) ? sendForm() : abortSendForm()
     }
 
     function checkAge() {
@@ -29,31 +21,27 @@ window.addEventListener('load', () => {
     }
 
     function sendForm() {
-        failture.classList.remove('status-sending-active');
-        submited.classList.add('status-sending-active');
+        failture.classList.remove('hint-active');
+        submited.classList.add('hint-active');
         resetForm()
     }
 
     function abortSendForm() {
-        submited.classList.remove('status-sending-active');
-        failture.classList.add('status-sending-active');
+        submited.classList.remove('hint-active');
+        failture.classList.add('hint-active');
     }
 
     function handleInput({ target }) {
         if (target.hasAttribute("data-reg")) {
             checkInput(target)
         }
-        if (target.hasAttribute('data-password-repeat')) {
-            checkPassword(target)
+        if (target.getAttribute("id") === 'password_repeat' || target.getAttribute("id") === 'password') {
+            checkPasswords()
         }
     }
 
-    function checkPassword(elem) {
-        if (elem.value === document.getElementById('password').value) {
-            toggleClassElement(elem, 'value-valid', 'value-not-valid')
-        } else {
-            toggleClassElement(elem, 'value-not-valid', 'value-valid')
-        }
+    function checkPasswords() {
+        password.value === password_repeat.value ? toggleClassElement(password_repeat, 'value-valid', 'value-not-valid') : toggleClassElement(password_repeat, 'value-not-valid', 'value-valid')
     }
 
     function checkInput(elem) {
@@ -78,7 +66,7 @@ window.addEventListener('load', () => {
             item.classList.remove('value-valid');
         });
         setTimeout(() => {
-            submited.classList.remove('status-sending-active');
+            submited.classList.remove('hint-active');
         }, 5000);
     }
 

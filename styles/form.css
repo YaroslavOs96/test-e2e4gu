@@ -90,13 +90,13 @@ b {
     color: rgb(14, 114, 125)
 }
 
-.status-sending-active {
+.hint-active {
     font-size: 20px;
     transition: font-size .2s ease-in-out 0s;
     color: #fff;
 }
 
-.status-sending {
+.hint-container {
     height: 50px;
     width: 100%;
     font-size: 0;
@@ -138,11 +138,11 @@ button {
         margin-top: 10px
     }
 
-    .status-sending {
+    .hint-container {
         height: 30px
     }
 
-    .status-sending-active {
+    .hint-active {
         font-size: 15px
     }
 }
