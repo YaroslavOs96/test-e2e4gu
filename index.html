@@ -16,6 +16,93 @@
 </head>
 
 <body>
+    <div class="block">
+
+        <h2 class="block_header">Регистрация</h2>
+
+        <form class="form"
+              method="post"
+              id="form_registration">
+
+            <div class="form-item">
+                <label> Имя <b>*</b> <br>
+                    <input class="text-input"
+                           type="text"
+                           name="name"
+                           title="Введите Ваше имя латиницей или кириллицей"
+                           data-reg="^[а-яА-ЯёЁa-zA-Z].{2,20}$">
+                    <span>Введите Вашу фамилию латиницей или кириллицей</span>
+                </label>
+            </div>
+
+            <div class="form-item">
+                <label> Фамилия <b>*</b> <br>
+                    <input class="text-input"
+                           type="text"
+                           name="surname"
+                           title="Введите Вашу фамилию латиницей или кириллицей"
+                           data-reg="^[а-яА-ЯёЁa-zA-Z].{1,20}$">
+                    <span>Введите Вашу фамилию латиницей или кириллицей</span>
+
+                </label>
+            </div>
+
+            <div class="form-item">
+                <label> Email <b>*</b> <br>
+                    <input class="text-input"
+                           placeholder="name@mail.ccc"
+                           type="email"
+                           name="email"
+                           title="Введите ваш email в формате name@mail.ccc"
+                           data-reg="^[-\w.]+@([A-z0-9][-A-z0-9]+\.)+[A-z]{2,4}$">
+                    <span>Введите ваш email в формате name@mail.ccc</span>
+                </label>
+            </div>
+
+            <div class="form-item">
+                <label> Пароль <b>*</b> <br>
+                    <input class="text-input"
+                           type="password"
+                           name="password"
+                           id="password"
+                           title="Длина от 8 символов. Пароль должен содержать минимум одну цифру, заглавную букву и символ"
+                           data-reg="^(?=.*[A-Z])(?=.*[!@#$&*])(?=.*[0-9])(?=.*[a-z])(?=^.{8,}$)">
+                    <span>Длина от 8 символов. Пароль должен содержать минимум одну цифру, заглавную букву и
+                        символ</span>
+                </label>
+            </div>
+
+            <div class="form-item">
+                <label> Пароль еще раз <b>*</b> <br>
+                    <input class="text-input"
+                           type="password"
+                           name="password_repeat"
+                           title="Повторите введенный пароль"
+                           data-password-repeat>
+                    <span>Повторите введенный пароль</span>
+                </label>
+            </div>
+
+            <div class="form-item">
+                <label> Дата рождения <b>*</b> <br>
+                    <input class="text-input"
+                           id="date-of-birth"
+                           type="date"
+                           name="birdth-date"
+                           title="Выберите или введите вашу дату рождения"
+                           data-reg="[0-9]{4}-(0[1-9]|1[012])-(0[1-9]|1[0-9]|2[0-9]|3[01])">
+                    <span>Выберите или введите вашу дату рождения, только 18+</span>
+                </label>
+            </div>
+
+            <div class="flex-column">
+                <div class="status-sending flex-centered">
+                    <p id="failture">Правильно заполните все обязательные* поля</p>
+                    <p id="submited">Ваша заявка отправлена</p>
+                </div> <button type="submit"> Отправить </button>
+            </div>
+        </form>
+    </div>
     <script src="scripts/script.js"></script>
 </body>
 
